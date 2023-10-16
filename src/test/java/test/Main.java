@@ -43,7 +43,7 @@ public class Main {
         //  ახლიდან დალოგინების დროს მჭირდება, ისე არა
         loginPage.clickLogin()
                 .clickLoginForm()
-                .clickUsername()-
+                .clickUsername()
                 .clickFillUsername()
                 .clickFillPassword()
                 .clickLoginButton()
