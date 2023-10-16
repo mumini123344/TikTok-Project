@@ -17,9 +17,34 @@ public class UploadPage {
     @FindBy(id = "com.zhiliaoapp.musically:id/mwl")
     public WebElement uploadAtProfile;
 
+    @FindBy(xpath = "//android.widget.Button[@content-desc=\"Set up profile\"]")
+    public WebElement editProfile;
+
+    @FindBy(id = "com.zhiliaoapp.musically:id/egy")
+    public WebElement changePhoto;
+
+    @FindBy(xpath = "//android.widget.TextView[@text = 'Select from Gallery']")
+    public WebElement selectFromGallery;
+
+
     public UploadPage clickUploadAtProfile() throws InterruptedException {
         Thread.sleep(randomClass.RandomMethod());
         uploadAtProfile.click();
+        return this;
+    }
+
+    public UploadPage clickEditProfile(){
+        editProfile.click();
+        return this;
+    }
+
+    public UploadPage clickChangePhoto(){
+        changePhoto.click();
+        return this;
+    }
+
+    public UploadPage clickSelectFromGallery(){
+        selectFromGallery.click();
         return this;
     }
 }

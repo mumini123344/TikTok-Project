@@ -1,14 +1,17 @@
 package test;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Description;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.StartingPage;
 import pages.UploadPage;
+import utils.CopyToAndroid;
 import utils.Setup;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
@@ -18,9 +21,9 @@ public class Main {
     private WebDriverWait wait;
     private StartingPage startingPage;
     private LoginPage loginPage;
-
     private UploadPage uploadPage;
     Setup setup = new Setup();
+    CopyToAndroid copyVideo = new CopyToAndroid();
 
 
     @BeforeMethod
@@ -32,6 +35,7 @@ public class Main {
         uploadPage = new UploadPage(driver);
     }
 
+    @Description("TODO Login")
     @Test(enabled = false)
     public void LoginTest() throws InterruptedException {
         startingPage.clickAgree()
@@ -51,11 +55,21 @@ public class Main {
 
     }
 
-    @Test
+    @Description("TODO change profile picture")
+    @Test(enabled = false)
     public void ProfileTest() throws InterruptedException {
         startingPage.clickProfile();
-        uploadPage.clickUploadAtProfile();
+        uploadPage.clickEditProfile()
+                .clickChangePhoto()
+                .clickSelectFromGallery();
+
     }
 
+    // To be continued
+    @Description("TODO upload video")
+    @Test
+    public void UploadVideoTest() throws IOException {
+        copyVideo.copyToAndroid("Desktop/TiktokVideos", "/storage/emulated/0/DCIM/Camera");
+    }
 
 }
