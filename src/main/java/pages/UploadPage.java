@@ -2,15 +2,15 @@ package pages;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.RandomClass;
+
+import java.util.List;
 
 public class UploadPage {
-
-    RandomClass randomClass = new RandomClass();
-    public UploadPage(AndroidDriver driver) {
+    public UploadPage(WebDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
@@ -26,25 +26,17 @@ public class UploadPage {
     @FindBy(xpath = "//android.widget.TextView[@text = 'Select from Gallery']")
     public WebElement selectFromGallery;
 
+    @FindBy(id = "com.zhiliaoapp.musically.gp:id/ln")
+    public WebElement uploadFromAdd;
 
-    public UploadPage clickUploadAtProfile() throws InterruptedException {
-        Thread.sleep(randomClass.RandomMethod());
-        uploadAtProfile.click();
-        return this;
-    }
 
-    public UploadPage clickEditProfile(){
-        editProfile.click();
-        return this;
-    }
+    @FindBy(className = "android.widget.FrameLayout")
+    public List<WebElement> uploadVideo;
 
-    public UploadPage clickChangePhoto(){
-        changePhoto.click();
-        return this;
-    }
+    @FindBy(id = "com.zhiliaoapp.musically.gp:id/nm")
+    public WebElement nextButton;
 
-    public UploadPage clickSelectFromGallery(){
-        selectFromGallery.click();
-        return this;
-    }
+    @FindBy(id = "com.zhiliaoapp.musically.gp:id/alb")
+    public WebElement postNow;
+
 }

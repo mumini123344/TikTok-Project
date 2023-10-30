@@ -1,14 +1,14 @@
 package test;
 
+import data.ProxyPath;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Description;
+import io.restassured.RestAssured;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.StartingPage;
-import pages.UploadPage;
-import utils.CopyToAndroid;
+import steps.*;
 import utils.Setup;
 
 import java.io.IOException;
@@ -16,60 +16,77 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-
-    private AndroidDriver driver;
-    private WebDriverWait wait;
-    private StartingPage startingPage;
-    private LoginPage loginPage;
-    private UploadPage uploadPage;
+    AndroidDriver driver;
+    WebDriverWait wait;
+    StartingSteps startingPage;
+    LoginSteps loginPage;
+    UploadSteps uploadPage;
     Setup setup = new Setup();
-    CopyToAndroid copyVideo = new CopyToAndroid();
+
+    DeleteAndUploadVideoSteps deleteAndUploadVideoPage = new DeleteAndUploadVideoSteps();
+    ProxyPath proxyPath = new ProxyPath();
+    ClickAndHoldStep clickAndHoldPage;
 
 
-    @BeforeMethod
-    public void setUp() throws MalformedURLException {
-        driver = setup.initializeDriver();
+    @BeforeTest
+    public void setUp() throws MalformedURLException, InterruptedException {
+
+        driver = setup.initializeDriver("com.zhiliaoapp.musically.gp", "com.ss.android.ugc.aweme.main.homepage.MainActivity");
+
+        //driver = setup.initializeDriver("com.sec.android.app.myfiles", "com.sec.android.app.myfiles.external.ui.MainActivity");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        startingPage = new StartingPage(driver);
-        loginPage = new LoginPage(driver);
-        uploadPage = new UploadPage(driver);
+        clickAndHoldPage = new ClickAndHoldStep(driver);
+        startingPage = new StartingSteps(driver);
+        loginPage = new LoginSteps(driver);
+        uploadPage = new UploadSteps(driver);
+
+
     }
 
-    @Description("TODO Login")
-    @Test(enabled = false)
-    public void LoginTest() throws InterruptedException {
-        startingPage.clickAgree()
-                .clickSkip()
-                .clickStartWatching()
-                .swipeUpForMore(driver)
-                .clickProfile();
 
-        //  ახლიდან დალოგინების დროს მჭირდება, ისე არა
+    @Description("TODO Login")
+    @Test(priority = 1)
+    public void StartingPageTest() throws InterruptedException, IOException {
+//        deleteAndUploadVideoPage.delete()
+//                .copy();
+//
+//        clickAndHoldPage.clickStorage(driver)
+//                .clickDCIM(driver)
+//                .clickCamera(driver)
+//                .doHoldAndClickVideo(driver, clickAndHoldPage.holdAndClickFirstVideo)
+//                .clickToMove()
+//                .clickMoveHere();
+
+        startingPage.composition(driver)
+                .clickAgree(driver)
+                .swipeUpForMore(driver)
+                .clickAdd();
+
+
+        uploadPage.clickUploadFromAdd()
+                .clickVideo()
+                .clickNextButton()
+                .clickPostNow();
+
         loginPage.clickLogin()
-                .clickLoginForm()
+                .clickLoginMethod()
                 .clickUsername()
                 .clickFillUsername()
                 .clickFillPassword()
-                .clickLoginButton()
-                .clickDontPermission();
+                .clickLoginButton();
 
     }
 
-    @Description("TODO change profile picture")
-    @Test(enabled = false)
-    public void ProfileTest() throws InterruptedException {
-        startingPage.clickProfile();
-        uploadPage.clickEditProfile()
-                .clickChangePhoto()
-                .clickSelectFromGallery();
-
-    }
-
-    // To be continued
-    @Description("TODO upload video")
-    @Test
-    public void UploadVideoTest() throws IOException {
-        copyVideo.copyToAndroid("Desktop/TiktokVideos", "/storage/emulated/0/DCIM/Camera");
+    @AfterTest
+    public void quitTest() {
+        System.out.println("AFTER TEST STARTED");
+        RestAssured.get(proxyPath.getProxyPath());
+        System.out.println("PROXY ROTATED");
+        driver.quit();
     }
 
 }
+
+
+
+

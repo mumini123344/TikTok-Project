@@ -2,7 +2,7 @@ package data;
 
 public class Data {
 
-    String username = "mamamia1233440";
+    String username = "kitrikitradze123";
     String pass = "Pa$$W0rd";
 
     public String getUsername() {

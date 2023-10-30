@@ -19,13 +19,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>6.12.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>6.13.0</version>
+            <version>6.17.2</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -33,44 +27,28 @@
             <artifactId>selenide-core</artifactId>
             <version>6.13.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.7.0</version>
+            <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide-testng</artifactId>
-            <version>6.12.3</version>
+            <version>6.17.2</version>
             <scope>compile</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.9.1</version>
+            <version>4.11.0</version>
         </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
@@ -81,98 +59,47 @@
             <artifactId>allure-environment-writer</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-android-driver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-android-driver</artifactId>
             <version>2.39.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.6.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.8.0</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.11.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>8.5.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>2.0.7</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.7</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
         <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>6.17.2</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-android-driver -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-android-driver</artifactId>
-            <version>2.39.0</version>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
         </dependency>
         <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230618</version>
         </dependency>
         <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>8.5.1</version>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.1.1.4</version>
         </dependency>
     </dependencies>
 
@@ -184,8 +111,7 @@
                 <version>2.20</version>
                 <configuration>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj
-                        .version}/aspectjweaver-${aspectj.version}.jar"
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                 </configuration>
                 <dependencies>
@@ -198,5 +124,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
