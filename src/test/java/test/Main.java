@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
+
     AndroidDriver driver;
     WebDriverWait wait;
     StartingSteps startingPage;
